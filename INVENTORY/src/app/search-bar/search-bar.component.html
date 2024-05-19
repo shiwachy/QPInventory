@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="search-container">
+    <input  type="text" style="padding: 10px; width: 100%;" list="datalistOptions" [(ngModel)]="searchTerm" (input)="onSearchInputChange()" placeholder="Type to search...">
+    <button (click)="getLink()" class="btn btn-primary link-button">GetLink</button>
+  </div>
+  <h3>URL Links</h3>
+  <!-- <ul>
+    <li *ngFor="let url of urls">{{ url }}</li>
+  </ul> -->
+  <table class="table">
+    <tr *ngFor="let url of urls, let i=index">
+      <td>{{i+1}}</td>
+      <td>{{ url }}</td>
+      <button type="button" 
+        class="btn btn-dark btn-sm"
+       (click)="copyValue(url)">CopyLink</button>
+    </tr>
+  </table>
+</div>
+
+
+<!-- <button (click)="copyValue()">Copy text</button> -->
+
+<!-- This provides auto complete while adding keyword -->
+<datalist id="datalistOptions" *ngIf="showAutocomplete">
+  <option *ngFor="let keyword of filteredKeywords" >
+    <li (click)="onKeywordSelected(keyword)">{{ keyword }}</li>    
+  </option>
+</datalist>
+
+
