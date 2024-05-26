@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "D:/Inventory App/Inventoryapp/Inventoryapp/wwwroot/AngularProd",
+            "outputPath": "../InventoryManagemetAPI/InventoryManagemetAPI/wwwroot/angularProd",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",

@@ -20,7 +20,7 @@ export class SearchBarComponent implements OnInit {
     private notifierService: NotifierService,
     ) { 
     this.notifier = notifierService;
-    this.http.get<string[]>('https://localhost:7295/api/Hyperlink/GetKeywords')
+    this.http.get<string[]>('/api/Hyperlink/GetKeywords')
     .subscribe((data: string[]) => {
       this.keywords = data;
     });
@@ -53,7 +53,7 @@ export class SearchBarComponent implements OnInit {
       'Content-Type': 'application/json'
     });
     // Assuming your API endpoint is '/api/getLink' , { headers: headers }
-    this.http.post('https://localhost:7295/api/Hyperlink/GetLinks',JSON.stringify(this.searchTerm), { headers: headers }).subscribe(
+    this.http.post('/api/Hyperlink/GetLinks',JSON.stringify(this.searchTerm), { headers: headers }).subscribe(
       (response) => this.success(response),
       (error) => this.handleError(error)
     ); 
@@ -73,12 +73,16 @@ export class SearchBarComponent implements OnInit {
   }
 
     //copy link
-    copyValue = async (url) => {
+    copyValue = async (url)=> {
       try {
-        await navigator.clipboard.writeText(url);
-        alert('Link copied to clipboard');
+        if ((navigator as any).clipboard) {
+          await (navigator as any).clipboard.writeText(url);
+          alert('Link copied to clipboard');
+        } else {
+          alert('Clipboard API not supported');
+        }
       } catch (err) {
-        alert('Failed to copy: '+ err);
+        alert('Failed to copy: ' + err);
       }
     }
   

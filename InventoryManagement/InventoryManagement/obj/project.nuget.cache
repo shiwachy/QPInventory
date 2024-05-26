@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dO/mn/MJ0+3GU3CTScieWXvRTewzVYYBckvkg0h3anfvN8QQBnDbMU0cfQeMKcjP2w0Kykb6+DyGrHrTRPxsiQ==",
+  "dgSpecHash": "pRL0WpbNHSjzHjHCyfCwJmFxS3swNHROk2mEiDy+ar+mtEdpTl5ecg3BS5kNP8SJSKvRJbLP9SD8V8VTZe/2IA==",
   "success": true,
-  "projectFilePath": "G:\\QuestPondInventoryManagement\\Inventory App\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj",
+  "projectFilePath": "G:\\InternTask\\QuestPondInventoryManagement\\Inventory App\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\shiwa\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\shiwa\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

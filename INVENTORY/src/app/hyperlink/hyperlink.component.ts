@@ -26,7 +26,7 @@ export class HyperlinkComponent implements OnInit {
 
   constructor(private fb: FormBuilder,private http: HttpClient,private notifierService: NotifierService) {
     this.notifier = notifierService;
-    this.http.get<string[]>('https://localhost:7295/api/Hyperlink/GetKeywords')
+    this.http.get<string[]>('/api/Hyperlink/GetKeywords')
     .subscribe((data: string[]) => {
       this.keywords = data;
     });
@@ -81,7 +81,7 @@ export class HyperlinkComponent implements OnInit {
       'Content-Type': 'application/json'
     });
     if(this.dataToAdd.hyperlink.length>0){
-      this.http.post("https://localhost:7295/api/Hyperlink/GetLinkInfo",JSON.stringify(this.dataToAdd.hyperlink), { headers: headers })
+      this.http.post("/api/Hyperlink/GetLinkInfo",JSON.stringify(this.dataToAdd.hyperlink), { headers: headers })
         .subscribe((response)=>this.onLinkFound(response),
          (error)=>{
            this.actionName = "Submit";
@@ -109,7 +109,7 @@ export class HyperlinkComponent implements OnInit {
   }
 
   onUpdate(){
-    this.http.put('https://localhost:7295/api/Hyperlink/Update', this.dataToAdd).subscribe(
+    this.http.put('/api/Hyperlink/Update', this.dataToAdd).subscribe(
         (response)=>{
           this.dataToAdd.keyWords.length=0;
           this.dataToAdd.hyperlink = "";
@@ -126,7 +126,7 @@ export class HyperlinkComponent implements OnInit {
     if (this.dataToAdd.hyperlink!="" || this.dataToAdd.keyWords!=null) {
       // Send POST request to API
       //const formData = this.form.value;
-      this.http.post('https://localhost:7295/api/Hyperlink', this.dataToAdd).subscribe(
+      this.http.post('/api/Hyperlink', this.dataToAdd).subscribe(
         (response) => this.success(response),
         (error) => this.handleError(error)
       ); 

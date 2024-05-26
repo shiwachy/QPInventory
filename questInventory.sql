@@ -7,7 +7,7 @@ CREATE TABLE mst_hyperlinks(
 )
 
 CREATE TABLE mst_keywords(
-	keywordId INT IDENTITY(1,2) PRIMARY KEY,
+	keywordId INT IDENTITY(1,1) PRIMARY KEY,
 	keyword VARCHAR(MAX)
 )
 
